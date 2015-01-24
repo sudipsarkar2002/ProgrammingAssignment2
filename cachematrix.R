@@ -29,9 +29,11 @@ cacheSolve <- function(x, ...) {
 
               m <- x$getmatrix()
               if(!is.null(m)) {
-                 message("getting cached data")
+                 message("If m is not null then return the value of m from cache")
                  return(m)
               }
+
+#if not found in cache then inverse the matrix. 
               matrix<-x$get()
               m <- solve(matrix, ...)
               x$setmatrix(m)
